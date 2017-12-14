@@ -43,6 +43,7 @@ The `ContentManagementClient` also supports working with strongly-typed models.
 ```csharp
 // Retrieving a specific language variant of a content item
 ContentItemVariantModel<MyContentTypeModel> responseVariant = await client.GetContentItemVariantAsync<MyContentTypeModel>(variantIdentifier);
+
 // Retrieving a list of language variants of a content item
 IEnumerable<ContentItemVariantModel<MyContentTypeModel>> responseVariants = await client.ListContentItemVariantsAsync<MyContentTypeModel>(identifier);
 ```
