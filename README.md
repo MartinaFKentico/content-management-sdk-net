@@ -51,7 +51,7 @@ CafeeModel stronglyTypedElements = new CafeModel
 // Upsert a language variant of a content item
 ContentItemVariantModel<CafeModel> responseVariant = await client.UpsertContentItemVariantAsync<CafeModel>(identifier, stronglyTypedElements); 
 ```
-For more code examples using strongly-typed models, see our [CM API reference].
+For more code examples using strongly-typed models, see our [CM API reference](https://developer.kenticocloud.com/v1/reference#content-management-api).
 
 ### Codename vs. ID vs. External ID
 
