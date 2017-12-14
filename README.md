@@ -42,10 +42,10 @@ Once you create a `ContentManagementClient`, you can start managing content in y
 The `ContentManagementClient` also supports working with strongly-typed models.
 ```csharp
 // Retrieving a specific language variant of a content item
-ContentItemVariantModel<MyContentTypeModel> responseVariant = await client.GetContentItemVariantAsync<MyContentTypeModel>(variantIdentifier);
+ContentItemVariantModel<CafeModel> responseVariant = await client.GetContentItemVariantAsync<CafeModel>(variantIdentifier);
 
 // Retrieving a list of language variants of a content item
-IEnumerable<ContentItemVariantModel<MyContentTypeModel>> responseVariants = await client.ListContentItemVariantsAsync<MyContentTypeModel>(identifier);
+IEnumerable<ContentItemVariantModel<CafeModel>> responseVariants = await client.ListContentItemVariantsAsync<CafeModel>(identifier);
 ```
 
 ### Codename vs. ID vs. External ID
