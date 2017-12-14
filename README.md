@@ -37,6 +37,16 @@ ContentManagementClient client = new ContentManagementClient(options);
 
 Once you create a `ContentManagementClient`, you can start managing content in your project by calling methods on the client instance. See [Importing content items](#importing-content-items) for details.
 
+### Strongly-typed responses
+
+The `ContentManagementClient` also supports working with strongly-typed models.
+```csharp
+// Retrieving a specific language variant of a content item
+ContentItemVariantModel<MyContentTypeModel> responseVariant = await client.GetContentItemVariantAsync<MyContentTypeModel>(variantIdentifier);
+// Retrieving a list of language variants of a content item
+IEnumerable<ContentItemVariantModel<MyContentTypeModel>> responseVariants = await client.ListContentItemVariantsAsync<MyContentTypeModel>(identifier);
+```
+
 ### Codename vs. ID vs. External ID
 
 Most methods of the SDK accept an *Identifier* object that specifies which content item, language variant or asset you want to perform the given operation on. There are 3 types of identification you can use to create the identifier: 
