@@ -177,11 +177,21 @@ AssetDescription assetDescription = new AssetDescription
 
 IEnumerable<AssetDescription> descriptions = new [] { assetDescription };
 
+// Title of a new asset
+string title = "Asset title",
+
+// Defines the asset to upsert
+AssetUpdateModel asset = new AssetUpdateModel
+{
+    Descriptions = descriptions,
+    Title = title
+};
+
 string filePath = "‪C:\\Users\\Kentico\\Desktop\\puppies.png";
 string contentType = "image/png";
 
 // Uploads the file and links it to a new asset
-AssetModel response = await client.CreateAssetAsync(new FileContentSource(filePath, contentType), descriptions);
+AssetModel response = await client.CreateAssetAsync(new FileContentSource(filePath, contentType), asset);
 ```
 
 ### Importing Modular and linked content
@@ -423,11 +433,15 @@ AssetDescription assetDescription = new AssetDescription
 };
 IEnumerable<AssetDescription> descriptions = new [] { assetDescription };
 
+// Title of a new asset
+string title = "Asset title";
+
 // Defines the asset to upsert
 AssetUpsertModel asset = new AssetUpsertModel
 {
     FileReference = fileResult,
-    Descriptions = descriptions
+    Descriptions = descriptions,
+    Title = title
 };
 
 string externalId = "Ext-Asset-123-png";
@@ -448,11 +462,22 @@ AssetDescription assetDescription = new AssetDescription
 };
 
 IEnumerable<AssetDescription> descriptions = new [] { assetDescription };
+
+// Title of a new asset
+string title = "Asset title";
+
+// Defines the asset to update
+AssetUpdateModel asset = new AssetUpdateModel
+{
+    Descriptions = descriptions,
+    Title = title
+}
+
 string filePath = "‪C:\Users\Kentico\Desktop\puppies.png";
 string contentType = "image/png";
 
 // Creates a new asset using the given file and its descriptions
-AssetModel response = await client.CreateAssetAsync(new FileContentSource(filePath, contentType), descriptions);
+AssetModel response = await client.CreateAssetAsync(new FileContentSource(filePath, contentType), asset);
 ```
 
 #### Viewing an asset
