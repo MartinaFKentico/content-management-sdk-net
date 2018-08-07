@@ -423,7 +423,7 @@ FileReference fileResult = await client.UploadFileAsync(new FileContentSource(st
 
 #### Upserting an asset using external ID
 
-Update or create an asset using a `fileResult` reference to a previously uploaded file. You can specify an asset description for each language in your Kentico Cloud project.
+Update or create an asset using a `fileResult` reference to a previously uploaded file. You can specify an asset description for each language in your Kentico Cloud project. Specifying title of a new asset is optional. Use the asset title to better identify and filter your assets in the UI.
 
 ```csharp
 AssetDescription assetDescription = new AssetDescription
@@ -452,7 +452,7 @@ AssetModel response = await client.UpsertAssetByExternalIdAsync(externalId, asse
 
 #### Uploading an asset from a file system in a single step
 
-Import the asset file and its descriptions using a single method.
+Import the asset file and its descriptions using a single method. Specifying title of an asset is optional. You can use the asset title to better identify and filter your assets in the UI.
 
 ```csharp
 AssetDescription assetDescription = new AssetDescription
